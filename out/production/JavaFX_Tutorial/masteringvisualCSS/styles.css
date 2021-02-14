@@ -1,0 +1,20 @@
+.root{
+    -fx-background-color: lightblue;
+    -fx-padding: 20px;
+}
+
+.label{
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    -fx-padding: 10px;
+}
+
+.list-view {
+    -fx-background-color: lightgrey;
+    -fx-pref-width: 250px;
+}
+
+#big-bold-text{
+    -fx-font-weight: bold;
+    -fx-font-size: 20pt;
+}

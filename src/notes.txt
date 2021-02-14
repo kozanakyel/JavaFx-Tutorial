@@ -1,0 +1,62 @@
+
+void changed(ObservableValue<? extends T> observable,
+T oldValue, T newValue)
+
+PROPERTY INTERFACE
+With all preliminaries out of the way, we can finally look at the Property interface. It
+provides five methods:
+void bind(ObservableValue<? extends T> observable); The bind() method establishes a unidirectional binding between the Property and
+                                                    the ObservableValue.
+void unbind();  The unbind() method releases the binding.
+boolean isBound();
+void bindBidirectional(Property<T> other);
+void unbindBidirectional(Property<T> other);
+
+i1 = IntegerProperty [value: 1024]
+i1.get() = 1024
+i1.getvalue = 1024
+i1 getbean null
+
+Added invalidation listener
+Calling i1.set(2048).
+The observable has been invalidated: IntegerProperty [value: 2048].
+Calling i1.setValue(3072)
+The observable has been invalidated: IntegerProperty [value: 3072].
+Removed invalidation listener
+Calling i1.set(4096)
+IntegerProperty [value: 4096]
+
+Added change listener
+Calling i1.set(5120)
+The observableValue has changed: oldvalue = 4096, newvalue = 5120
+Removed change listener
+Calling i1.set(6144)
+
+i2.get = 0
+Binding i2 to i1
+i2.get = 6144
+Calling i1.set7168
+i2.get = 7168
+unbinding i2 from i1
+i2 get = 7168
+Calling i1.set8192
+i2.get = 7168
+
+INVALİDATİON LİSTENER OBJECDEKİ O AN YAPILAN İŞLEMİ DİNLER(OBSERVABLE)
+CHANGELİSTENER İLE İSE OBSERVABLEVALUE, ESKİ VE YENİ DEĞERLERİ AYNI ANDA DİNLEYEBİLİRİZ
+
+JavaFX Bindings
+The Binding interface provides four methods:
+boolean isValid();
+void invalidate();
+ObservableList<?> getDependencies();
+void dispose();  //atmak elden çıkarmak
+
+///////////////////////
+1. "Labeled" controls: Button, CheckBox, Hyperlink, Label,
+RadioButton, and ToggleButton
+2. "Text input" controls: TextField, TextArea, and
+PasswordField
+3. "Other" simple controls: ProgressBar, ProgressIndicator,
+and Slider
+
